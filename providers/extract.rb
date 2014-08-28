@@ -33,7 +33,7 @@ end
 action :extract do
   version = Chef::Version.new(Chef::VERSION[/^(\d+\.\d+\.\d+)/, 1])
   r = new_resource
-  basename = ::File.basename(r.name)
+  basename = ::File.basename(r.source)
   local_archive = "#{r.download_dir}/#{basename}"
 
   directory r.download_dir do
@@ -41,7 +41,7 @@ action :extract do
   end
 
   remote_file basename do
-    source r.name
+    source r.source
     checksum r.checksum
     path local_archive
     backup false
@@ -66,7 +66,7 @@ action :extract do
 end
 
 action :extract_local do
-  extract_tar(new_resource.name, new_resource)
+  extract_tar(new_resource.source, new_resource)
 end
 
 def extract_tar(local_archive, r)
