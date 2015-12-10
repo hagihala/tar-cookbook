@@ -1,5 +1,16 @@
 # Tar Cookbook Changelog
 
+## v0.7.0 (2015-07-08)
+
+* Add adoption notice
+* Use `file_cache_path` instead of `file_backup_path` for downloaded artifact
+  storage
+* Fix links to Chef documentation in README
+
+## v0.6.0 (2014-12-03)
+
+* Allow either string or array for tar flags
+
 ## v0.5.0 (2014-07-28)
 
 * Add support for more attributes of `remote_file`

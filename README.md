@@ -1,3 +1,7 @@
+*This cookbook is no longer actively maintained and is up for adoption. If you
+would like to take over development, go to https://supermarket.chef.io/cookbooks/tar,
+click the "Adopt me!" button, and you could be the new maintainer of this cookbook!*
+
 DESCRIPTION
 ===========
 
@@ -54,7 +58,7 @@ A `tar_extract` LWRP provides an easy way to download remote tar files and extra
 - creates: A file this command creates - if the file exists, the command will not be run.
 - configure\_flags: Array of additional flags to be passed to `./configure`.
 - archive\_name: Specify a different name for the downloaded archive. Use it if the directory name inside the tar file is different than the name defined in the URL.
-Additionally, `tar_package` supports most `remote_file` [attributes](http://docs.opscode.com/chef/resources.html#id192).
+Additionally, `tar_package` supports most `remote_file` [attributes](https://docs.chef.io/chef/resources.html#remote-file).
 
 `tar_extract`
 - source: name attribute. The source remote URL.
@@ -65,7 +69,7 @@ Additionally, `tar_package` supports most `remote_file` [attributes](http://docs
 - tar\_flags: Array of additional flags to be passed to tar xzf command.
 - group: Group name or group ID to extract the archive under. If set to non-root group, point to a `download_dir` the group has permission to access.
 - user: User name or user ID to extract the archive under. If set to non-root user, point to a `download_dir` the user has permission to access.
-Additionally, `tar_extract` supports most `remote_file` [attributes](http://docs.opscode.com/chef/resources.html#id192).
+Additionally, `tar_extract` supports most `remote_file` [attributes](https://docs.chef.io/chef/resources.html#remote-file).
 
 # Example
 

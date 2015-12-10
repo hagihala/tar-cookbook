@@ -27,13 +27,13 @@ actions :extract, :extract_local
 
 attribute :source,         :kind_of => String, :name_attribute => true
 attribute :checksum,       :kind_of => String
-attribute :download_dir,   :kind_of => String, :default => Chef::Config[:file_backup_path]
+attribute :download_dir,   :kind_of => String, :default => Chef::Config[:file_cache_path]
 attribute :group,          :kind_of => String, :default => 'root'
 attribute :mode,           :kind_of => String, :default => '0755'
 attribute :target_dir,     :kind_of => String
 attribute :creates,        :kind_of => String
 attribute :compress_char,  :kind_of => String, :default => 'z'
-attribute :tar_flags,      :kind_of => Array,  :default => []
+attribute :tar_flags,      :kind_of => [String, Array], :default => Array.new
 attribute :user,           :kind_of => String, :default => 'root'
 
 version = Chef::Version.new(Chef::VERSION[/^(\d+\.\d+\.\d+)/, 1])
